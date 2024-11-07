@@ -1,0 +1,9 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Search Books</h2>
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search by title or author" class="form-control mb-3">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let book of searchBooks()">
+        <strong>{{ book.title }}</strong> by {{ book.author }}
+      </li>
+    </ul>
+  </div>
