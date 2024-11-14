@@ -137,7 +137,7 @@ Features
 3. Advanced Search and Filtering
 
 	•	Users can search for books by title or author, and filter results based on genre.
-	•	A Price Filter option is available, allowing users to sort books by price, making it easier to find books within a specific price range.
+	
 
 4. Rating System
 
