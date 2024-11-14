@@ -115,3 +115,56 @@ export const routes: Routes = [
 - **Mehdi Labbafi** - Developer and creator of the project.
 
 
+# Assignment 3
+
+
+Book Manager
+
+Book Manager is a web application for managing and organizing books with various features for customization and filtering. Below are the main functionalities added to enhance the user experience.
+
+Features
+
+1. Book Cover Upload
+
+	•	Users can upload a cover image for each book when adding it to the list.
+	•	The cover image is displayed in the list, making it easier to visually identify books.
+
+2. Price Management
+
+	•	Each book entry includes a Price field, allowing users to specify the price of each book.
+	•	The price information is shown in both the book list and the search page.
+
+3. Advanced Search and Filtering
+
+	•	Users can search for books by title or author, and filter results based on genre.
+	•	A Price Filter option is available, allowing users to sort books by price, making it easier to find books within a specific price range.
+
+4. Rating System
+
+	•	Each book can have a Rating from 0 to 5.
+	•	Books can be sorted by rating, helping users find the highest-rated books quickly.
+
+5. Responsive Design
+
+	•	The layout is optimized for both desktop and mobile views.
+	•	The interface adjusts automatically to different screen sizes, ensuring a smooth user experience.
+
+6. Refined UI Elements
+
+	•	Buttons are styled uniformly across the app for a consistent look.
+	•	Input forms and tables are designed with a clean and user-friendly layout.
+
+Installation
+
+	1.	Clone the repository.
+	2.	Install dependencies with npm install.
+	3.	Run the app with ng serve.
+	4.	Access the app in your browser at http://localhost:4200.
+
+Future Enhancements
+
+	•	User registration and login system for personalized book lists (coming soon).
+
+## Contributors
+
+- **Mehdi Labbafi** - Developer and creator of the project.
