@@ -127,31 +127,36 @@ Features
 1. Book Cover Upload
 
 	•	Users can upload a cover image for each book when adding it to the list.
+
 	•	The cover image is displayed in the list, making it easier to visually identify books.
 
-2. Price Management
+3. Price Management
 
 	•	Each book entry includes a Price field, allowing users to specify the price of each book.
+
 	•	The price information is shown in both the book list and the search page.
 
-3. Advanced Search and Filtering
+5. Advanced Search and Filtering
 
 	•	Users can search for books by title or author, and filter results based on genre.
 	
 
-4. Rating System
+6. Rating System
 
 	•	Each book can have a Rating from 0 to 5.
+
 	•	Books can be sorted by rating, helping users find the highest-rated books quickly.
 
-5. Responsive Design
+8. Responsive Design
 
 	•	The layout is optimized for both desktop and mobile views.
+
 	•	The interface adjusts automatically to different screen sizes, ensuring a smooth user experience.
 
-6. Refined UI Elements
+10. Refined UI Elements
 
 	•	Buttons are styled uniformly across the app for a consistent look.
+
 	•	Input forms and tables are designed with a clean and user-friendly layout.
 
 Installation
