@@ -8,48 +8,53 @@ import { Book } from '../../models/book.model';
   standalone: true,
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.css'],
   imports: [CommonModule, FormsModule]
 })
 export class BookListComponent {
   books: Book[] = [];
-  newBook: Book = { id: 0, title: '', author: '' };
+  newBook: Book = { id: 0, title: '', author: '', genre: '', price: 0, rating: 0, coverImage: '' };
   isEditing: boolean = false;
   editingBookId: number | null = null;
 
   constructor(private bookService: BookService) {
-    // Fetch the list of books from the service
     this.books = this.bookService.getBooks();
+  }
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.newBook.coverImage = e.target.result; // Save the image as Base64
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
   addBook() {
     if (this.newBook.title && this.newBook.author) {
       if (this.isEditing && this.editingBookId !== null) {
-        // Edit an existing book
         this.bookService.updateBook({ ...this.newBook, id: this.editingBookId });
         this.isEditing = false;
         this.editingBookId = null;
       } else {
-        // Add a new book
         this.bookService.addBook({ ...this.newBook });
       }
-      // Clear the form
-      this.newBook = { id: 0, title: '', author: '' };
-      // Update the book list
+      // Reset newBook object after adding or editing a book
+      this.newBook = { id: 0, title: '', author: '', genre: '', price: 0, rating: 0, coverImage: '' };
       this.books = this.bookService.getBooks();
     }
   }
 
   editBook(book: Book) {
-    // Set the form to the selected book for editing
     this.newBook = { ...book };
     this.isEditing = true;
     this.editingBookId = book.id;
   }
 
   deleteBook(bookId: number) {
-    // Delete a book from the service
     this.bookService.deleteBook(bookId);
-    // Update the book list
     this.books = this.bookService.getBooks();
   }
 }

@@ -18,8 +18,8 @@ export class BookService {
     } else {
       // Initial data
       this.books = [
-        { id: 1, title: '1984', author: 'George Orwell' },
-        { id: 2, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' }
+        { id: 1, title: '1984', author: 'George Orwell', genre: 'Dystopian', rating: 4.5 },
+        { id: 2, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', genre: 'Classic', rating: 4.0 }
       ];
       this.saveBooksToStorage();
     }

@@ -8,7 +8,7 @@ import { SearchComponent } from './components/search/search.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [RouterModule, BookListComponent, SearchComponent] // Adding components to imports
+  imports: [RouterModule, BookListComponent, SearchComponent] // اضافه کردن RouterModule
 })
 export class AppComponent {
   title = 'BookManager';

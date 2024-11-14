@@ -8,11 +8,14 @@ import { Book } from '../../models/book.model';
   standalone: true,
   selector: 'app-search',
   templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css'], // Add the CSS file
   imports: [CommonModule, FormsModule]
 })
 export class SearchComponent {
   books: Book[] = [];
   searchQuery: string = '';
+  selectedGenre: string = 'All';
+  sortByRating: boolean = false;
 
   constructor(private bookService: BookService) {
     this.updateBooksList();
@@ -23,9 +26,24 @@ export class SearchComponent {
   }
 
   searchBooks() {
-    return this.books.filter(book => 
-      book.title.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
-      book.author.toLowerCase().includes(this.searchQuery.toLowerCase())
+    let filteredBooks = this.books.filter(book =>
+      (book.title.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
+      book.author.toLowerCase().includes(this.searchQuery.toLowerCase()))
     );
+
+    if (this.selectedGenre !== 'All') {
+      filteredBooks = filteredBooks.filter(book => book.genre === this.selectedGenre);
+    }
+
+    if (this.sortByRating) {
+      filteredBooks = filteredBooks.sort((a, b) => b.rating - a.rating);
+    }
+
+    return filteredBooks;
+  }
+
+  getGenres() {
+    const genres = this.books.map(book => book.genre);
+    return ['All', ...new Set(genres)];
   }
 }
